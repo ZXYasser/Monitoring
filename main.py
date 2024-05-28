@@ -20,7 +20,7 @@ app.config['JSON_AS_ASCII'] = False
 #--------------------------------------------------------------------------------------------------------
 
 # Define the dean's email address
-DEAN_EMAIL = "yasser.a3@tvtc.gov.sa"
+DEAN_EMAIL = "yasserza009@gmail.com"
 
 
 
