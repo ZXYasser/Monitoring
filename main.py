@@ -20,7 +20,7 @@ app.config['JSON_AS_ASCII'] = False
 #--------------------------------------------------------------------------------------------------------
 
 # Define the dean's email address
-DEAN_EMAIL = "Halsaleem@tvtc.gov.sa"
+DEAN_EMAIL = "yasser.a3@tvtc.gov.sa"
 
 
 
@@ -304,35 +304,6 @@ def add_teacher():
 def view_files():
     files = get_uploaded_files()
     return render_template('view_files.html', files=files)
-
-# @app.route('/view_lectures/<filename>')
-# def view_lectures(filename, encodings=['utf-8', 'latin-1', 'iso-8859-1'], delimiters=[',', ';', '\t']):
-#     filepath = os.path.join('uploads', filename)
-#     days = set()  # Set to store unique days
-
-#     try:
-#         for encoding in encodings:
-#             for delimiter in delimiters:
-#                 with open(filepath, 'r', encoding=encoding) as csvfile:
-#                     reader = csv.reader(csvfile, delimiter=delimiter)
-#                     headers = next(reader, None)  # Read the header row
-#                     if headers is None or len(headers) != 9:
-#                         continue  # Try the next delimiter or encoding
-#                     for row in reader:
-#                         if len(row) != 9:
-#                             print(f"Skipping invalid row: {row}")  # Debugging output for invalid rows
-#                             continue
-#                         days.add(row[1])  # Add the day to the set
-#                     break  # Stop trying delimiters if successful
-#             else:
-#                 continue  # Try the next encoding if no delimiter worked
-#             break  # Stop trying encodings if successful
-
-#     except Exception as e:
-#         print(f"Error processing file: {e}")
-#         return str(e)
-
-#     return render_template('view_days.html', filename=filename, days=sorted(days))
 
 
 @app.route('/view_lectures/<filename>')
