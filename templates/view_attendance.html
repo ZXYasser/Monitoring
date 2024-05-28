@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Records</title>
+</head>
+<body>
+    <h1>Attendance Records</h1>
+    <table border="1">
+        <tr>
+            <th>Room Number</th>
+            <th>Day</th>
+            <th>Lecture Time</th>
+            <th>Group Number</th>
+            <th>Group Type</th>
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>Student Number</th>
+            <th>Teacher Name</th>
+            <th>Attendance</th>
+            <th>Timestamp</th>
+        </tr>
+        {% for record in attendance_records %}
+        <tr>
+            <td>{{ record[1] }}</td>
+            <td>{{ record[2] }}</td>
+            <td>{{ record[3] }}</td>
+            <td>{{ record[4] }}</td>
+            <td>{{ record[5] }}</td>
+            <td>{{ record[6] }}</td>
+            <td>{{ record[7] }}</td>
+            <td>{{ record[8] }}</td>
+            <td>{{ record[9] }}</td>
+            <td>{{ record[10] }}</td>
+            <td>{{ record[11] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

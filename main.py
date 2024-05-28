@@ -15,18 +15,39 @@ app = Flask(__name__)
 # app = Flask(__name__, static_url_path='/static')
 app.config['JSON_AS_ASCII'] = False
 
+def create_attendance_table():
+    conn = sqlite3.connect('room.db')
+    c = conn.cursor()
+    c.execute('''CREATE TABLE IF NOT EXISTS attendance (
+                 id INTEGER PRIMARY KEY AUTOINCREMENT,
+                 room_number TEXT,
+                 day TEXT,
+                 lecture_time TEXT,
+                 group_num TEXT,
+                 group_type TEXT,
+                 course_code TEXT,
+                 course_name TEXT,
+                 stu_num TEXT,
+                 teacher_name TEXT,
+                 attendance TEXT,
+                 timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+                 )''')
+    conn.commit()
+    conn.close()
 
+# Call the function to create the attendance table before using it
+create_attendance_table()
 
 #--------------------------------------------------------------------------------------------------------
 
 # Define the dean's email address
-DEAN_EMAIL = "@tvtc.gov.sa"
+DEAN_EMAIL = "yasser.a3@tvtc.gov.sa"
 
 
 
 def send_email(receiver_email, missed_lecture=False, attachment_path=None, missed_lecture_details=None):
     sender_email = "FSCT.Follow@gmail.com"  # Replace with your email address
-    password = "wsowyxmceelpdfuj"  # Replace with your email password
+    password = "gygpaitrndtfiffu"  # Replace with your email password
 
     message = MIMEMultipart()
     message["From"] = sender_email
@@ -369,7 +390,54 @@ def view_lectures_by_day(filename, day, encodings=['utf-8', 'latin-1', 'iso-8859
 #--------------------------------------------------------------------------------------------------------
 
 
-# Route for updating attendance
+# # Route for updating attendance
+# @app.route('/update_attendance', methods=['POST'])
+# def update_attendance():
+#     if request.method == 'POST':
+#         room_numbers = request.form.getlist('room_number[]')
+#         days = request.form.getlist('day[]')
+#         lecture_times = request.form.getlist('lecture_time[]')
+#         group_nums = request.form.getlist('group_num[]')
+#         group_types = request.form.getlist('group_type[]')
+#         course_codes = request.form.getlist('course_code[]')
+#         course_names = request.form.getlist('course_name[]')
+#         stu_nums = request.form.getlist('stu_num[]')
+#         teacher_names = request.form.getlist('teacher_name[]')
+#         attendances = [request.form[f'attendance_{i}'] for i in range(1, len(room_numbers) + 1)]
+
+#         missed_lecture_details = []  # List to accumulate missed lecture details
+
+#         for room_number, day, lecture_time, group_num, group_type, course_code, course_name, stu_num, teacher_name, attendance in zip(room_numbers, days, lecture_times, group_nums, group_types, course_codes, course_names, stu_nums, teacher_names, attendances):
+#             if attendance == "missed":
+#                 # Accumulate missed lecture details
+#                 missed_lecture_details.append(f"{room_number}  :رقم القاعه ")
+#                 missed_lecture_details.append(f"  {day} :اليوم  ")
+#                 missed_lecture_details.append(f" {lecture_time} :وقت المحاضره ")
+#                 missed_lecture_details.append(f"{teacher_name} : اسم المدرس")
+#                 missed_lecture_details.append(f"{course_name} : اسم  المقرر")
+
+
+#                 # missed_lecture_details.append(f"رقم القاعه الدراسيه: {room_number}, اليوم: {day}, وقت المحاضره: {lecture_time}, رقم الشعبه: {group_num}, نوع الشعبه: {group_type}, رقم المقرر: {course_code}, اسم المقرر: {course_name}, عدد المتدربين: {stu_num}, اسم المدرس: {teacher_name}, التحضير: {attendance}")
+
+
+#         if missed_lecture_details:
+#             # Concatenate all missed lecture details into a single string
+#             missed_lecture_details_str = "\n".join(missed_lecture_details)
+            
+#             # Send email with missed lecture details
+#             send_email(receiver_email=DEAN_EMAIL, missed_lecture=True, attachment_path="C:\\Users\\ياسر الزهراني\\Desktop\\LecMonitoring\\S.docx", missed_lecture_details=missed_lecture_details_str)
+
+#         # Now you have all the data, you can process it accordingly
+#         for room_number, day, lecture_time, group_num, group_type, course_code, course_name, stu_num, teacher_name, attendance in zip(room_numbers, days, lecture_times, group_nums, group_types, course_codes, course_names, stu_nums, teacher_names, attendances):
+#             # Process each lecture's attendance data
+#             print(f"Room Number: {room_number}, Day: {day}, Lecture Time: {lecture_time}, Group Number: {group_num}, Group Type: {group_type}, Course Code: {course_code}, Course Name: {course_name}, Student Number: {stu_num}, Teacher Name: {teacher_name}, Attendance: {attendance}")
+#         # After processing, you may want to redirect the user to another page
+#         return redirect(url_for('view_files'))  # Redirect to view_files route after processing
+#     else:
+#         return redirect(url_for('view_files'))  # Redirect to view_files route if request method is not POST
+
+
+
 @app.route('/update_attendance', methods=['POST'])
 def update_attendance():
     if request.method == 'POST':
@@ -387,6 +455,14 @@ def update_attendance():
         missed_lecture_details = []  # List to accumulate missed lecture details
 
         for room_number, day, lecture_time, group_num, group_type, course_code, course_name, stu_num, teacher_name, attendance in zip(room_numbers, days, lecture_times, group_nums, group_types, course_codes, course_names, stu_nums, teacher_names, attendances):
+            # Insert each attendance record into the attendance table
+            conn = sqlite3.connect('room.db')
+            c = conn.cursor()
+            c.execute("INSERT INTO attendance (room_number, day, lecture_time, group_num, group_type, course_code, course_name, stu_num, teacher_name, attendance) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                      (room_number, day, lecture_time, group_num, group_type, course_code, course_name, stu_num, teacher_name, attendance))
+            conn.commit()
+            conn.close()
+
             if attendance == "missed":
                 # Accumulate missed lecture details
                 missed_lecture_details.append(f"{room_number}  :رقم القاعه ")
@@ -395,25 +471,17 @@ def update_attendance():
                 missed_lecture_details.append(f"{teacher_name} : اسم المدرس")
                 missed_lecture_details.append(f"{course_name} : اسم  المقرر")
 
-
-                # missed_lecture_details.append(f"رقم القاعه الدراسيه: {room_number}, اليوم: {day}, وقت المحاضره: {lecture_time}, رقم الشعبه: {group_num}, نوع الشعبه: {group_type}, رقم المقرر: {course_code}, اسم المقرر: {course_name}, عدد المتدربين: {stu_num}, اسم المدرس: {teacher_name}, التحضير: {attendance}")
-
-
         if missed_lecture_details:
             # Concatenate all missed lecture details into a single string
             missed_lecture_details_str = "\n".join(missed_lecture_details)
-            
             # Send email with missed lecture details
-            send_email(receiver_email=DEAN_EMAIL, missed_lecture=True, attachment_path="C:\\Users\\ياسر الزهراني\\Desktop\\LecMonitoring-main\\S.docx", missed_lecture_details=missed_lecture_details_str)
+            send_email(receiver_email=DEAN_EMAIL, missed_lecture=True, attachment_path="C:\\Users\\ياسر الزهراني\\Desktop\\LecMonitoring\\S.docx", missed_lecture_details=missed_lecture_details_str)
 
-        # Now you have all the data, you can process it accordingly
-        for room_number, day, lecture_time, group_num, group_type, course_code, course_name, stu_num, teacher_name, attendance in zip(room_numbers, days, lecture_times, group_nums, group_types, course_codes, course_names, stu_nums, teacher_names, attendances):
-            # Process each lecture's attendance data
-            print(f"Room Number: {room_number}, Day: {day}, Lecture Time: {lecture_time}, Group Number: {group_num}, Group Type: {group_type}, Course Code: {course_code}, Course Name: {course_name}, Student Number: {stu_num}, Teacher Name: {teacher_name}, Attendance: {attendance}")
         # After processing, you may want to redirect the user to another page
         return redirect(url_for('view_files'))  # Redirect to view_files route after processing
     else:
         return redirect(url_for('view_files'))  # Redirect to view_files route if request method is not POST
+
 
 #--------------------------------------------------------------------------------------------------------
 
@@ -488,6 +556,21 @@ def Equipment():
 
 
 #--------------------------------------------------------------------------------------------------------
+
+@app.route('/view_attendance')
+def view_attendance():
+    conn = sqlite3.connect('room.db')
+    c = conn.cursor()
+    c.execute("SELECT * FROM attendance ORDER BY timestamp DESC")
+    attendance_records = c.fetchall()
+    conn.close()
+    return render_template('view_attendance.html', attendance_records=attendance_records)
+
+
+
+
+#--------------------------------------------------------------------------------------------------------
+
 
 if __name__ == '__main__':
     # app.run(debug=True)
