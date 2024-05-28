@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}View Days{% endblock %}
+
+{% block content %}
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .heading {
+            text-align: center;
+            color: #fff;
+        }
+        
+
+        .title {
+            text-align: center;
+            color: #fff;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px; /* Add margin bottom for spacing */
+        }
+        
+
+        .day-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .day-item {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc; /* Add border between days */
+            padding-bottom: 5px; /* Add padding below each day */
+        }
+
+        .day-link {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .day-link:hover {
+            color: #0056b3;
+        }
+        .footer {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 0 10px 10px;
+        }
+        .header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+    </style>
+
+<body>
+
+    <div class="header">
+        <h1>الكلية التقنية بفرسان</h1>
+        <h1>قسم المتابعه</h1>
+    </div>
+
+    <div class="container">
+        <div class="title">
+            <h1 class="heading">Days</h1>
+        </div>
+        <ul class="day-list">
+            {% for day in days | sort_days %}
+                <li class="day-item">
+                    <a href="{{ url_for('view_lectures_by_day', filename=filename, day=day) }}" class="day-link">{{ day }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 FARASAN TECHNICAL COLLEGE. All Rights Reserved. Designed by Yasser Alzhrany</p>
+    </div>
+    </body>
+{% endblock %}

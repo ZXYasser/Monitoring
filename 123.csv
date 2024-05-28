@@ -1,0 +1,17 @@
+room_number,day,lecture_time,group_num,group_type,course_code,course_name,stu_num,teacher_name
+105,Sunday,0940 - 0800,55543,in-class,ss251,math,10,yasser abdullah alzahrani
+105,Sunday,1140 - 1000,55522,,ss252,math,11,abdullah
+105,Sunday,1410 - 1230,55520,,ss253,math,20,ahmed
+105,Sunday,1600 - 1420,55610,,ss254,math,9,moslah
+105,Monday,0940 - 0800,55554,,ss255,math,10,moslah
+105,Monday,1140 - 1000,55428,,ss256,math,14,moslah
+105,Monday,1410 - 1230,55619,,ss257,math,9,moslah
+105,Tuesday,0940 - 0800,55554,,ss258,math,10,moslah
+105,Tuesday,1410 - 1230,55619,,ss259,math,9,moslah
+105,Tuesday,1600 - 1420,55441,,ss260,math,14,moslah
+105,Wednesday,0940 - 0800,55554,,ss261,math,10,moslah
+105,Wednesday,1140 - 1000,55441,,ss262,math,14,moslah
+105,Wednesday,1410 - 1230,55527,,ss263,math,11,moslah
+105,Thursday,0940 - 0800,55619,,ss264,math,9,yasser abdullah alzahrani
+105,Thursday,1140 - 1000,55527,,ss265,math,11,yasser abdullah alzahrani
+105,Thursday,1410 - 1230,58039,,ss266,math,14,yasser abdullah alzahrani

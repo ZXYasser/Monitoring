@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% block title %}View Lectures by Day{% endblock %}
+{% block content %}
+<head>
+    <meta charset="UTF-32">
+    
+
+    <style>
+        .body {
+            font-family: Arial, sans-serif; /* Use a font that supports Arabic characters */
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .heading {
+            text-align: center;
+            color: #fff;
+        }
+
+        .title {
+            text-align: center;
+            color: #fff;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px; /* Add margin bottom for spacing */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        select {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 0 10px 10px;
+        }
+        .header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+    </style>
+
+
+
+</head>
+    
+
+<body>
+
+   
+    
+
+
+    <div class="header">
+        <h1>الكلية التقنية بفرسان</h1>
+        <h1>قسم المتابعه</h1>
+    </div>
+    <div class="container">
+        <div class="title">
+            <h1 class="heading">Lectures for {{ day }}</h1>
+        </div>
+        <form action="/update_attendance" method="POST">
+            <table>
+                <tr>
+                    <th>Room Number</th>
+                    <th>Day</th>
+                    <th>Lecture Time</th>
+                    <th>Group Number</th>
+                    <th>Group Type</th>
+                    <th>Course Code</th>
+                    <th>Course Name</th>
+                    <th>Student Number</th>
+                    <th>Teacher Name</th>
+                    <th>Attendance</th>
+                </tr>
+                {% for lecture in lectures %}
+                    <tr>
+                        <input type="hidden" name="room_number[]" value="{{ lecture[0] }}">
+                        <input type="hidden" name="day[]" value="{{ lecture[1] }}">
+                        <input type="hidden" name="lecture_time[]" value="{{ lecture[2] }}">
+                        <input type="hidden" name="group_num[]" value="{{ lecture[3] }}">
+                        <input type="hidden" name="group_type[]" value="{{ lecture[4] }}">
+                        <input type="hidden" name="course_code[]" value="{{ lecture[5] }}">
+                        <input type="hidden" name="course_name[]" value="{{ lecture[6] }}">
+                        <input type="hidden" name="stu_num[]" value="{{ lecture[7] }}">
+                        <input type="hidden" name="teacher_name[]" value="{{ lecture[8] }}">
+
+                        <td>{{ lecture[0] }}</td>
+                        <td>{{ lecture[1] }}</td>
+                        <td>{{ lecture[2] }}</td>
+                        <td>{{ lecture[3] }}</td>
+                        <td>{{ lecture[4] }}</td>
+                        <td>{{ lecture[5] }}</td>
+                        <td>{{ lecture[6] }}</td>
+                        <td>{{ lecture[7] }}</td>
+                        <td>{{ lecture[8] }}</td>
+                        <td>
+                            <select name="attendance_{{ loop.index }}">
+                                <option value="attended">Attended</option>
+                                <option value="missed">Missed</option>
+                            </select>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <input type="submit" value="Submit Attendance">
+        </form>
+    </div>
+    <div class="footer">
+        <p>© 2024 FARASAN TECHNICAL COLLEGE. All Rights Reserved. Designed by Yasser Alzhrany</p>
+    </div>
+    </body>
+{% endblock %}

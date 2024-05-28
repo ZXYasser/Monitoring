@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكلية التقنية بفرسان</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+        .footer {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 0 10px 10px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        nav {
+    background-color: #333; /* Dark background color */
+    padding: 10px 0; /* Adjust padding as needed */
+}
+
+
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff; /* Light text color */
+            display: block;
+            
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #555; /* Darker background color on hover */
+            
+            color: black;
+        }
+        .form-container {
+            padding: 30px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 16px;
+        }
+        input[type="text"], input[type="email"], input[type="submit"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+        .form-container {
+            padding: 30px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 16px;
+        }
+        input[type="text"], input[type="email"], input[type="submit"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .teacher-section {
+            cursor: pointer;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        .teacher-section:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>الكلية التقنية بفرسان</h1>
+        <h1>قسم المتابعه</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('add_lecture') }}">الصفحة الرئيسيه</a></li>
+            <li><a href="{{ url_for('view_files') }}">القاعات</a></li>
+            <li><a href="">الاحصائيات</a></li>
+            <li><a href="">الأقسام</a></li>
+            <li><a href="{{ url_for('contactUs') }}">تواصل معنا</a></li>
+            <li><a href="{{ url_for('add_teacher') }}">المدربين</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+
+        
+        <div class="header">
+            <h1>Add Teacher's Information</h1>
+        </div>
+        <div class="form-container">
+
+            <form method="POST" action="/add_teacher" enctype="multipart/form-data">
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">الايميل:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="major">التخصص:</label>
+                <input type="text" id="major" name="major" required>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="header">
+            <h1>Techers Info</h1>
+        </div>
+        <div class="form-container">
+            <!-- Computer Teachers Section -->
+            <div class="teacher-section" id="computer-teachers">
+                <h2>Computer Teachers</h2>
+                <!-- Computer teachers' info will be displayed here -->
+            </div>
+
+            <!-- Management Teachers Section -->
+            <div class="teacher-section" id="management-teachers">
+                <h2>Management Teachers</h2>
+                <!-- Management teachers' info will be displayed here -->
+            </div>
+
+            <!-- General Teachers Section -->
+            <div class="teacher-section" id="general-teachers">
+                <h2>General Teachers</h2>
+                <!-- General teachers' info will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('computer-teachers').addEventListener('click', function() {
+        fetchTeacherInfo('computer');
+    });
+
+    document.getElementById('management-teachers').addEventListener('click', function() {
+        fetchTeacherInfo('management');
+    });
+
+    document.getElementById('general-teachers').addEventListener('click', function() {
+        fetchTeacherInfo('general');
+    });
+
+    function fetchTeacherInfo(type) {
+        fetch(`/get_teachers?type=${type}`)
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById(`${type}-teachers`);
+                container.innerHTML = ''; // Clear previous content
+                data.forEach(teacher => {
+                    const div = document.createElement('div');
+                    div.innerHTML = `<p>Name: ${teacher.name}</p><p>Email: ${teacher.email}</p><p>Major: ${teacher.major}</p>`;
+                    container.appendChild(div);
+                });
+            })
+            .catch(error => console.error('Error fetching teacher info:', error));
+    }
+});
+
+    </script>
+
+    
+    <div class="footer"> 
+        <p>© 2024 FARASAN TECHNICAL COLLEGE. All Rights Reserved. Designed by YASR ALZHRANY</p>
+    </div>
+    
+</body>
+</html>

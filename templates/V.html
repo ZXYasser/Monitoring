@@ -1,0 +1,116 @@
+<!-- 
+{% extends "base.html" %}
+
+{% block title %}View Files{% endblock %}
+
+{% block content %}
+<h1>Uploaded Files</h1>
+<ul>
+    {% for file in files %}
+    <li><a href="{{ url_for('view_lectures', filename=file) }}">{{ file }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %} -->
+
+
+
+
+
+<!-- 
+{% extends "base.html" %}
+
+{% block title %}View Lectures{% endblock %}
+
+{% block content %}
+<form action="/update_attendance" method="POST">
+    <table border="1">
+        <tr>
+            
+            <th>Room Number</th>
+            <th>Day</th>
+            <th>Lecture Time</th>
+            <th>Group Number</th>
+            <th>Group Type</th>
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>Student Number</th>
+            <th>Teacher Name</th>
+            <th>Attendance</th>
+        </tr>
+        {% for lecture in lectures %}
+        <tr>
+           
+            <td>{{ lecture[0] }}</td>
+            <td>{{ lecture[1] }}</td>
+            <td>{{ lecture[2] }}</td>
+            <td>{{ lecture[3] }}</td>
+            <td>{{ lecture[4] }}</td>
+            <td>{{ lecture[5] }}</td>
+            <td>{{ lecture[6] }}</td>
+            <td>{{ lecture[7] }}</td>
+            <td>{{ lecture[8] }}</td>
+            <td>
+                <select name="attendance_{{ lecture[0] }}">
+                    <option value="attended" {% if lecture[10] == 'attended' %} selected {% endif %}>Attended</option>
+                    <option value="missed" {% if lecture[10] == 'missed' %} selected {% endif %}>Missed</option>
+                </select>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <input type="submit" value="Update Attendance">
+</form>
+{% endblock %} -->
+
+<!-- {% extends "base.html" %}
+
+{% block title %}View Lectures{% endblock %}
+
+{% block content %}
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+    <form action="/update_attendance" method="POST">
+        <table>
+            <tr>
+                <th>Room Number</th>
+                <th>Day</th>
+                <th>Lecture Time</th>
+                <th>Group Number</th>
+                <th>Group Type</th>
+                <th>Course Code</th>
+                <th>Course Name</th>
+                <th>Student Number</th>
+                <th>Teacher Name</th>
+            </tr>
+            {% for lecture in lectures %}
+            <tr>
+                <td>{{ lecture[0] }}</td>
+                <td>{{ lecture[1] }}</td>
+                <td>{{ lecture[2] }}</td>
+                <td>{{ lecture[3] }}</td>
+                <td>{{ lecture[4] }}</td>
+                <td>{{ lecture[5] }}</td>
+                <td>{{ lecture[6] }}</td>
+                <td>{{ lecture[7] }}</td>
+                <td>{{ lecture[8] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+{% endblock %} -->

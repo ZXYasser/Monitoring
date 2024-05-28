@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+
+{% block title %}View Files{% endblock %}
+
+{% block content %}
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+        .footer {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 0 10px 10px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+       
+        .heading {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .file-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .file-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+       
+        .header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+        nav {
+    background-color: #333; /* Dark background color */
+    padding: 10px 0; /* Adjust padding as needed */
+}
+
+
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff; /* Light text color */
+            display: block;
+            
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #555; /* Darker background color on hover */
+            
+            color: black;
+        }
+
+        .file-link {
+            color: #000;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 18px;
+            flex-grow: 1;
+        }
+
+        .file-link:hover {
+            color: #333;
+        }
+
+        .delete-btn {
+            background-color: #ff3333;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .delete-btn:hover {
+            background-color: #ff6666;
+        }
+
+        .footer {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 0 10px 10px;
+        }
+    </style>
+
+<body>
+
+    <div class="header">
+        <h1>الكلية التقنية بفرسان</h1>
+        <h1>قسم المتابعه</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('add_lecture') }}">الصفحة الرئيسيه</a></li>
+            <li><a href="{{ url_for('view_files') }}">القاعات</a></li>
+            <li><a href="">الاحصائيات</a></li>
+            <li><a href="">الأقسام</a></li>
+            <li><a href="{{ url_for('contactUs') }}">تواصل معنا</a></li>
+            <li><a href="{{ url_for('add_teacher') }}">المدربين</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="heading">Uploaded Files</h1>
+        </div>
+        <form action="#" method="POST" id="deleteForm">
+            <ul class="file-list">
+                {% for file in files %}
+                    <li class="file-item">
+                        <a href="{{ url_for('view_lectures', filename=file) }}" class="file-link">{{ file }}</a>
+                        <button type="button" class="delete-btn" onclick="deleteFile('{{ file }}')">Delete</button>
+                    </li>
+                {% endfor %}
+            </ul>
+        </form>
+    </div>
+
+    <script>
+        function deleteFile(filename) {
+            if (confirm("Are you sure you want to delete '" + filename + "'?")) {
+                fetch('/delete_file', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        filename: filename
+                    }),
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert("File '" + filename + "' deleted successfully!");
+                        location.reload(); // Reload the page to reflect the changes
+                    } else {
+                        alert("An error occurred while deleting the file.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("An error occurred while deleting the file.");
+                });
+            }
+            
+        }
+        
+    </script>
+
+<div class="footer">
+    <p>© 2024 FARASAN TECHNICAL COLLEGE. All Rights Reserved. Designed by Yasser Alzhrany</p>
+</div>
+</body>
+{% endblock %}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - الكلية التقنية بفرسان</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+        .footer {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 0 10px 10px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        nav {
+    background-color: #333; /* Dark background color */
+    padding: 10px 0; /* Adjust padding as needed */
+}
+
+
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff; /* Light text color */
+            display: block;
+            
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #555; /* Darker background color on hover */
+            
+            color: black;
+        }
+        .form-container {
+            padding: 30px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 16px;
+        }
+        input[type="text"], input[type="email"], input[type="submit"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+        .form-container {
+            padding: 30px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 16px;
+        }
+        input[type="text"], input[type="email"], input[type="submit"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .teacher-section {
+            cursor: pointer;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        .teacher-section:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>الكلية التقنية بفرسان</h1>
+        <h1>قسم المتابعه</h1>
+    </div>
+    
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('add_lecture') }}">الصفحة الرئيسيه</a></li>
+            <li><a href="{{ url_for('view_files') }}">القاعات</a></li>
+            <li><a href="">الاحصائيات</a></li>
+            <li><a href="">الأقسام</a></li>
+            <li><a href="{{ url_for('add_teacher') }}">المدربين</a></li>
+            <li><a href="{{ url_for('contactUs') }}">تواصل معنا</a></li> <!-- Added contact us page link -->
+        </ul>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container">
+        <div class="header">
+            <h1>تواصل معنا </h1>
+        </div>
+        <div class="form-container">
+            <p style="text-align: right;">:تستطيع التواصل معنا خلال الخيارات التالية</p>
+            <ul>
+                <li>Email: FSCT-TAD@tvtc.gov.sa</li>
+                <li>Phone: +(966) 0173400211</li>
+                <li>Address:  Farasan island, Jazan, Saudi Arabia</li>
+            </ul>
+            <p style="text-align: right;">:أو تستطيع كتابة رسالتك مباشرة لكي تصل إلينا</p>
+            <form action="#" method="post"> <!-- Replace "#" with your backend endpoint -->
+                <label for="name" style="text-align: right;" >:الاسم</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email" style="text-align: right;">:البريد الالكتروني</label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="6" style="width: 100%;" required></textarea><br>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer"> 
+        <p>© 2024 FARASAN TECHNICAL COLLEGE. All Rights Reserved. Designed by YASR ALZHRANY</p>
+    </div>
+</body>
+</html>
