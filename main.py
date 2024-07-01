@@ -289,6 +289,14 @@ def get_all_lectures():
 
 
 
+
+
+
+
+
+
+
+
 #--------------------------------------------------------------------------------------------------------
 
 # Function to get all uploaded CSV files
@@ -412,10 +420,23 @@ def update_attendance():
             # Insert each attendance record into the attendance table
             conn = sqlite3.connect('room.db')
             c = conn.cursor()
-            c.execute("INSERT INTO attendance (room_number, day, lecture_time, group_num, group_type, course_code, course_name, stu_num, teacher_name, attendance) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                      (room_number, day, lecture_time, group_num, group_type, course_code, course_name, stu_num, teacher_name, attendance))
-            conn.commit()
+            # c.execute("INSERT INTO attendance (room_number, day, lecture_time, group_num, group_type, course_code, course_name, stu_num, teacher_name, attendance) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            #           (room_number, day, lecture_time, group_num, group_type, course_code, course_name, stu_num, teacher_name, attendance))
+            # conn.commit()
+            # conn.close()
+
+            # Only insert records where attendance is either 'attended' or 'missed'
+            if attendance in ('attended', 'missed'):
+                c.execute("INSERT INTO attendance (room_number, day, lecture_time, group_num, group_type, "
+                          "course_code, course_name, stu_num, teacher_name, attendance) "
+                          "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                          (room_number, day, lecture_time, group_num, group_type,
+                           course_code, course_name, stu_num, teacher_name, attendance))
+                
+
+                conn.commit()
             conn.close()
+
 
             if attendance == "missed":
                 # Accumulate missed lecture details
@@ -511,14 +532,27 @@ def Equipment():
 
 #--------------------------------------------------------------------------------------------------------
 
+# @app.route('/view_attendance')
+# def view_attendance():
+#     conn = sqlite3.connect('room.db')
+#     c = conn.cursor()
+#     c.execute("SELECT * FROM attendance ORDER BY timestamp DESC")
+#     attendance_records = c.fetchall()
+#     conn.close()
+#     return render_template('view_attendance.html', attendance_records=attendance_records)
+
 @app.route('/view_attendance')
 def view_attendance():
     conn = sqlite3.connect('room.db')
     c = conn.cursor()
-    c.execute("SELECT * FROM attendance ORDER BY timestamp DESC")
+    # Modify the SQL query to fetch only attended and missed lectures
+    c.execute("SELECT * FROM attendance WHERE attendance IN ('attended', 'missed') ORDER BY timestamp DESC")
     attendance_records = c.fetchall()
     conn.close()
     return render_template('view_attendance.html', attendance_records=attendance_records)
+
+
+
 
 
 
@@ -529,8 +563,3 @@ def view_attendance():
 if __name__ == '__main__':
     # app.run(debug=True)
      app.run(host='0.0.0.0', port=5000, debug=True)
-    
-
-
-
-
