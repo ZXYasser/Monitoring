@@ -557,6 +557,17 @@ def Equipment():
 
 #--------------------------------------------------------------------------------------------------------
 
+
+
+@app.route('/stat')     
+def stat():
+    return render_template('stat.html')
+
+
+
+#--------------------------------------------------------------------------------------------------------
+
+
 @app.route('/view_attendance')
 def view_attendance():
     conn = sqlite3.connect('room.db')

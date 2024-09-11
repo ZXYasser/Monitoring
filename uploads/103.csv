@@ -1,10 +1,7 @@
 room_number;day;lecture_time;group_num;group_type;course_code;course_name;stu_num;teacher_name
-103;Sunday;1000 - 1140;1;1;1;English language 1;1;Ahmed Hakmi
-103;Sunday;1230 -1410;1;1;1;Introduction to statistics;1;Ali Asili
-103;Monday;1230 -1410;1;1;1;English language 1;1;Ahmed Hakmi
-103;Monday;1420 - 1600;1;1;1;English language 1;1;Ahmed Hakmi
-103;Tuesday;0800 - 0940;1;1;1;  English Language;1;Ahmed Hakmi
-103;Tuesday;1610 - 1750;1;1;1;Job behavior and communication skills;1;Ali Al-Kanani Al-Zahrani
-103;Wednesday;1230 -1410;1;1;1;English language 1;1;Abdul Majeed Al-Khasafi Al-Fifi
-103;Thursday;0800 - 0940;1;1;1;English language 1;1;Abdul Majeed Al-Khasafi Al-Fifi
-103;Thursday;1230 -1410;1;1;1;mathematics;1;Abdullah Al Sherihi Al Shammari
+103;Sunday;1410-1230;54987;In class;113; English 3;18;Ahmed hakmi
+103;Monday;1000-1140;54987;In class;113; English 3;18;Ahmed hakmi
+103;Tuesday;1410-1230;54992;In class;204; English 4;6;Ahmed hakmi
+103;Wednesday;8000-0940;54977;In class;101;Islamic ;37;Ali Alzhrani
+103;Wednesday;1230-1410;54992;In class;204; English 4;6;Ahmed hakmi
+103;Thursday;1420-1600;54978;In class;201;Job Behavior and Career Future;67;Ali Alzhrani
