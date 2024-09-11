@@ -1,0 +1,17 @@
+room_number;day;lecture_time;group_num;group_type;course_code;course_name;stu_num;teacher_name
+105;Sunday;ý0800 - 0940;55543;1;1;Programming smart devices;1;Muhammad Al-Janoubi
+105;Sunday;1000 - 1140 ;55522;1;1;Advanced Internet technologies;1;Hussein Al-Saleem
+105;Sunday;1230 -1410 ;55520;1;1;Qualification for professional certificates;1;Muhammad Al-Janoubi
+105;Sunday;1420 - 1600 ;55610;1;1;Programming smart devices;1;Hussein Al-Saleem
+105;Monday;ý0800 - 0940;55554;1;1;project;1;Muhammad Al-Janoubi
+105;Monday;1000 - 1140 ;55428;1;1;Principles of web page programming;1;Yasser Al-Zahrani
+105;Monday;1230 - 1410 ;55619;1;1;project;1;Hussein Al-Saleem
+105;Tuesday;ý0800 - 0940;55554;1;1;Programming smart devices;1;Muhammad Al-Janoubi
+105;Tuesday;1230 - 1410 ;55619;1;1;project;1;Hussein Al-Saleem
+105;Tuesday;1420 - 1600 ;55441;1;1;Principles of web page programming;1;Yasser Al-Zahrani
+105;Wednesday;ý0800 - 0940;55554;1;1;Programming smart devices;1;Muhammad Al-Janoubi
+105;Wednesday;1000 - 1140 ;55441;1;1;Principles of web page programming;1;Yasser Al-Zahrani
+105;Wednesday;1230 - 1410 ;55527;1;1;Advanced Internet technologies;1;Hussein Al-Saleem
+105;Thursday;ý0800 - 0940;55619;1;1;project;1;Hussein Al-Saleem
+105;Thursday;1000 - 1140 ;55527;1;1;Advanced Internet technologies;1;Hussein Al-Saleem
+105;Thursday;1230 -1410 ;58039;1;1;Cooperative Training;1;Muhammad Al-Janoubi
