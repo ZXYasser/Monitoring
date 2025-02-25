@@ -451,7 +451,7 @@ def update_attendance():
             # Concatenate all missed lecture details into a single string
             missed_lecture_details_str = "\n".join(missed_lecture_details)
             # Send email with missed lecture details
-            # send_email(receiver_email=DEAN_EMAIL, missed_lecture=True, attachment_path="C:\\Users\\ياسر الزهراني\\Desktop\\LecMonitoring\\s.docx", missed_lecture_details=missed_lecture_details_str)
+            send_email(receiver_email=DEAN_EMAIL, missed_lecture=True, attachment_path="/home/ZXYasser/Monitoring/s.docx", missed_lecture_details=missed_lecture_details_str)
 
         # After processing, you may want to redirect the user to another page
         return redirect(url_for('view_files'))  # Redirect to view_files route after processing
