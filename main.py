@@ -402,6 +402,7 @@ def view_lectures_by_day(filename, day, encodings=['utf-8', 'latin-1', 'iso-8859
 
 @app.route('/update_attendance', methods=['POST'])
 def update_attendance():
+    print("Current Working Directory:", os.getcwd())
     if request.method == 'POST':
         room_numbers = request.form.getlist('room_number[]')
         days = request.form.getlist('day[]')
