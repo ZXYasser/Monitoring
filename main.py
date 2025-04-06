@@ -452,7 +452,8 @@ def update_attendance():
             missed_lecture_details_str = "\n".join(missed_lecture_details)
             # Send email with missed lecture details
             send_email(receiver_email=DEAN_EMAIL, missed_lecture=True, attachment_path="/home/ZXYasser/Monitoring/s.docx", missed_lecture_details=missed_lecture_details_str)
-
+# C:\\Users\\ياسر الزهراني\\Desktop\\LecMonitoring\\s.docx
+# /home/ZXYasser/Monitoring/s.docx
         # After processing, you may want to redirect the user to another page
         return redirect(url_for('view_files'))  # Redirect to view_files route after processing
     else:
@@ -537,22 +538,28 @@ def Equipment():
 
 @app.route('/stat')     
 def stat():
-    return render_template('stat.html')
-
-
-
-#--------------------------------------------------------------------------------------------------------
-
-
-@app.route('/view_attendance')
-def view_attendance():
     conn = sqlite3.connect('room.db')
     c = conn.cursor()
     # Modify the SQL query to fetch only attended and missed lectures
     c.execute("SELECT * FROM attendance WHERE attendance IN ('attended', 'missed') ORDER BY timestamp DESC")
     attendance_records = c.fetchall()
     conn.close()
-    return render_template('view_attendance.html', attendance_records=attendance_records)
+    return render_template('stat.html', attendance_records=attendance_records)
+
+
+
+#--------------------------------------------------------------------------------------------------------
+
+
+# @app.route('/view_attendance')
+# def view_attendance():
+#     conn = sqlite3.connect('room.db')
+#     c = conn.cursor()
+#     # Modify the SQL query to fetch only attended and missed lectures
+#     c.execute("SELECT * FROM attendance WHERE attendance IN ('attended', 'missed') ORDER BY timestamp DESC")
+#     attendance_records = c.fetchall()
+#     conn.close()
+#     return render_template('view_attendance.html', attendance_records=attendance_records)
 
 
 
