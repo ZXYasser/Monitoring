@@ -451,7 +451,7 @@ def update_attendance():
             # Concatenate all missed lecture details into a single string
             missed_lecture_details_str = "\n".join(missed_lecture_details)
             # Send email with missed lecture details
-            send_email(receiver_email=DEAN_EMAIL, missed_lecture=True, attachment_path="/home/ZXYasser/Monitoring/s.docx", missed_lecture_details=missed_lecture_details_str)
+            send_email(receiver_email=DEAN_EMAIL, missed_lecture=True, attachment_path="C:\\Users\\ياسر الزهراني\\Desktop\\LecMonitoring\\s.docx", missed_lecture_details=missed_lecture_details_str)
 # C:\\Users\\ياسر الزهراني\\Desktop\\LecMonitoring\\s.docx
 # /home/ZXYasser/Monitoring/s.docx
         # After processing, you may want to redirect the user to another page
@@ -534,17 +534,33 @@ def Equipment():
 
 #--------------------------------------------------------------------------------------------------------
 
-
-
 @app.route('/stat')     
 def stat():
     conn = sqlite3.connect('room.db')
     c = conn.cursor()
-    # Modify the SQL query to fetch only attended and missed lectures
-    c.execute("SELECT * FROM attendance WHERE attendance IN ('attended', 'missed') ORDER BY timestamp DESC")
-    attendance_records = c.fetchall()
+    c.execute("SELECT [teacher_name], attendance FROM attendance WHERE attendance IN ('attended', 'missed')")
+    rows = c.fetchall()
     conn.close()
-    return render_template('stat.html', attendance_records=attendance_records)
+
+    stats = {}
+    for teacher, status in rows:
+        if not teacher:
+            continue
+        if teacher not in stats:
+            stats[teacher] = {"attended": 0, "missed": 0}
+        if status == "attended":
+            stats[teacher]["attended"] += 1
+        elif status == "missed":
+            stats[teacher]["missed"] += 1
+
+    for teacher in stats:
+        total = stats[teacher]["attended"] + stats[teacher]["missed"]
+        percentage = round((stats[teacher]["attended"] / total) * 100, 1) if total else 0
+        stats[teacher]["total"] = total
+        stats[teacher]["percentage"] = percentage
+
+    return render_template('stat.html', stats=stats)
+
 
 
 

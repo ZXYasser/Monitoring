@@ -279,6 +279,34 @@ text-decoration: none;
     height: auto; /* Maintain aspect ratio */
     margin-left: 10px; /* Add margin for spacing */
 }
+body { font-family: 'Arial', sans-serif; direction: rtl; padding: 20px; background-color: #f2f2f2; }
+        .teacher-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+        .teacher-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px 20px;
+            width: 280px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .progress-bar {
+            background-color: #eee;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .fill {
+            background-color: #4caf50;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -315,7 +343,7 @@ text-decoration: none;
 
            
                 <h1>Attendance Records</h1>
-                <table border="1">
+                <!-- <table border="1">
                     <tr>
                         <th>Room Number</th>
                         <th>Day</th>
@@ -345,6 +373,51 @@ text-decoration: none;
                     </tr>
                     {% endfor %}
                 </table>
+ -->
+
+<!-- 
+    <label>نسبة التنفيذ</label>
+<div style="background: #eee; border-radius: 5px; overflow: hidden;">
+  <div style="width: 85%; background: #4CAF50; padding: 5px 0; text-align: center; color: white;">
+    85%
+  </div>
+</div><div class="teacher-cards">
+    <div class="teacher-card">
+      <h3>Yasser Al-Zahrani</h3>
+      <p>عدد المحاضرات: 3</p>
+      <p>المنفذة ✅: 2</p>
+      <p>الغير منفذة ❌: 1</p>
+      <div class="progress-bar">
+        <div class="fill" style="width: 66.6%;">نسبة التنفيذ: 66.6%</div>
+      </div>
+    </div>
+  
+    <div class="teacher-card">
+      <h3>Ibrahim Al-Hubaibi Al-Qahtani</h3>
+      <p>عدد المحاضرات: 2</p>
+      <p>المنفذة ✅: 1</p>
+      <p>الغير منفذة ❌: 1</p>
+      <div class="progress-bar">
+        <div class="fill" style="width: 50%;">نسبة التنفيذ: 50%</div>
+      </div>
+    </div> -->
+
+
+    
+<h2>بطاقات تنفيذ المحاضرات لكل مدرس</h2>
+<div class="teacher-cards">
+    {% for teacher, data in stats.items() %}
+    <div class="teacher-card">
+        <h3>{{ teacher }}</h3>
+        <p>عدد المحاضرات: {{ data.total }}</p>
+        <p>المنفذة ✅: {{ data.attended }}</p>
+        <p>الغير منفذة ❌: {{ data.missed }}</p>
+        <div class="progress-bar">
+            <div class="fill" style="width: {{ data.percentage }}%;">نسبة التنفيذ: {{ data.percentage }}%</div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 
     <!-- Footer section -->
