@@ -368,29 +368,35 @@ def view_lectures(filename, encodings=['utf-8', 'latin-1', 'iso-8859-1'], delimi
 
     
 @app.route('/view_lectures/<filename>/<day>')
-def view_lectures_by_day(filename, day, encodings=['utf-8', 'latin-1', 'iso-8859-1']):
+def view_lectures_by_day(filename, day):
     filepath = os.path.join('uploads', filename)
     lectures = []
 
-    try:
-        for encoding in encodings:
-            with open(filepath, 'r', encoding=encoding , errors='replace') as csvfile:
+    # جرّب الترميزات بهذا الترتيب
+    encodings = ['utf-8-sig', 'utf-8', 'windows-1256', 'latin-1', 'iso-8859-6']
+
+    for encoding in encodings:
+        try:
+            with open(filepath, 'r', encoding=encoding) as csvfile:
                 sniffer = csv.Sniffer()
-                dialect = sniffer.sniff(csvfile.read(1024))  # Read a small portion of the file to detect the dialect
-                csvfile.seek(0)  # Reset file pointer to beginning
+                sample = csvfile.read(1024)
+                csvfile.seek(0)
+                dialect = sniffer.sniff(sample)
                 reader = csv.reader(csvfile, delimiter=dialect.delimiter)
-                next(reader)  # Skip header row if present
+                next(reader, None)  # Skip header row
                 for row in reader:
                     if len(row) != 9:
-                        print(f"Skipping invalid row: {row}")  # Debugging output for invalid rows
+                        print(f"Skipping invalid row: {row}")
                         continue
-                    if row[1] == day:  # Check if the row's day matches the requested day
+                    if row[1] == day:
                         lectures.append(row)
-                break  # Stop trying encodings if successful
-
-    except Exception as e:
-        print(f"Error processing file: {e}")
-        return str(e)
+            break  # Success: exit loop after successful encoding
+        except UnicodeDecodeError:
+            print(f"Failed to decode using {encoding}, trying next...")
+            continue
+        except Exception as e:
+            print(f"Error processing file with encoding {encoding}: {e}")
+            continue
 
     return render_template('view_lectures_by_day.html', day=day, lectures=lectures)
 
@@ -451,7 +457,7 @@ def update_attendance():
             # Concatenate all missed lecture details into a single string
             missed_lecture_details_str = "\n".join(missed_lecture_details)
             # Send email with missed lecture details
-            send_email(receiver_email=DEAN_EMAIL, missed_lecture=True, attachment_path="/home/ZXYasser/Monitoring/s.docx", missed_lecture_details=missed_lecture_details_str)
+            send_email(receiver_email=DEAN_EMAIL, missed_lecture=True, attachment_path="\\Users\\ياسر الزهراني\\Desktop\\LecMonitoring\\s.docx", missed_lecture_details=missed_lecture_details_str)
 # C:\\Users\\ياسر الزهراني\\Desktop\\LecMonitoring\\s.docx
 # /home/ZXYasser/Monitoring/s.docx
         # After processing, you may want to redirect the user to another page

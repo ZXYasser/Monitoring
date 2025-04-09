@@ -307,6 +307,13 @@ body { font-family: 'Arial', sans-serif; direction: rtl; padding: 20px; backgrou
             text-align: center;
             font-size: 14px;
         }
+        .teacher-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
     </style>
 </head>
 <body>
@@ -343,7 +350,34 @@ body { font-family: 'Arial', sans-serif; direction: rtl; padding: 20px; backgrou
 
            
                 <h1>Attendance Records</h1>
-                <!-- <table border="1">
+      
+    
+<h2>بطاقات تنفيذ المحاضرات لكل مدرس</h2>
+<div class="teacher-cards">
+    {% for teacher, data in stats.items() %}
+    <div class="teacher-card">
+        <img src=""{{ url_for('stat', filename='images/yasser.jpeg') }}"" alt="صورة المدرس" class="teacher-image">
+        <h3>{{ teacher }}</h3>
+        <p>عدد المحاضرات: {{ data.total }}</p>
+        <p>المنفذة ✅: {{ data.attended }}</p>
+        <p>الغير منفذة ❌: {{ data.missed }}</p>
+        <div class="progress-bar">
+            <div class="fill" style="width: {{ data.percentage }}%;">نسبة التنفيذ: {{ data.percentage }}%</div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+    <!-- Footer section -->
+    <div class="footer"> 
+        <p>© 2024 Your Company. All Rights Reserved.</p>
+    </div>
+
+</body>
+</html>
+
+          <!-- <table border="1">
                     <tr>
                         <th>Room Number</th>
                         <th>Day</th>
@@ -401,30 +435,3 @@ body { font-family: 'Arial', sans-serif; direction: rtl; padding: 20px; backgrou
         <div class="fill" style="width: 50%;">نسبة التنفيذ: 50%</div>
       </div>
     </div> -->
-
-
-    
-<h2>بطاقات تنفيذ المحاضرات لكل مدرس</h2>
-<div class="teacher-cards">
-    {% for teacher, data in stats.items() %}
-    <div class="teacher-card">
-        <h3>{{ teacher }}</h3>
-        <p>عدد المحاضرات: {{ data.total }}</p>
-        <p>المنفذة ✅: {{ data.attended }}</p>
-        <p>الغير منفذة ❌: {{ data.missed }}</p>
-        <div class="progress-bar">
-            <div class="fill" style="width: {{ data.percentage }}%;">نسبة التنفيذ: {{ data.percentage }}%</div>
-        </div>
-    </div>
-    {% endfor %}
-</div>
-
-
-    <!-- Footer section -->
-    <div class="footer"> 
-        <p>© 2024 Your Company. All Rights Reserved.</p>
-    </div>
-
-</body>
-</html>
-
