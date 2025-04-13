@@ -546,6 +546,15 @@ def jobs():
 #--------------------------------------------------------------------------------------------------------
 
 
+
+@app.route('/trainer')     
+def trainer():
+    return render_template('trainer.html')
+
+#--------------------------------------------------------------------------------------------------------
+
+
+
 @app.route('/Equipment')     
 def Equipment():
     return render_template('Equipment.html')
