@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> الطلبات </title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        direction: rtl;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+    }
+    header {
+        background-image: url('file:///C:/xampp/htdocs/project/%D8%AE%D9%84%D9%81%D9%8A%D8%A9%20%D8%A7%D9%84%D9%87%D8%A8%D8%AF%D8%B1.jpg');
+        background-color: rgb(255, 255, 255);
+        color: rgb(247, 236, 236);
+        padding: 120px;
+        text-align: center;
+    }
+
+    nav ul li a:hover {
+        background-color: rgb(0, 0, 0);
+        
+    }
+
+
+    nav {
+        background-color: #ffffff07;
+        padding: 5px;
+    }
+
+
+nav a {
+color: rgb(255, 254, 254);
+margin: 0 10px;
+text-decoration: none;
+font-size: 15px;
+
+  }
+
+  .navbar {
+        background-color: #22baced7;
+        overflow: hidden;
+        position: center;
+        text-align: center;
+        
+    }
+    .navbar a {
+        float: right;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        position: center;
+        text-align: center;
+    }
+    .navbar a:hover {
+        background-color: #000000;
+        color: rgb(255, 255, 255);
+    }
+    
+    .dropdown {
+        float: right;
+        overflow: hidden;
+    }
+    .dropdown .dropbtn {
+        font-size: 16px;  
+        border: none;
+        outline: none;
+        color: rgb(255, 255, 255);
+        padding: 14px 20px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.644); 
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(39, 49, 102, 0.295);
+        z-index: 1;
+    }
+    .dropdown-content a {
+        float: none;
+        color: rgb(248, 241, 241);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: right;
+    }
+    .dropdown-content a:hover {
+        background-color: #000000;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        gap: 30px;
+    }
+    .link-box {
+        width: 300px;
+        height: 300px;
+        text-align: center;
+        border: 2px solid #22baced7;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .link-box img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    .link-box a {
+        display: block;
+        padding: 15px;
+        background-color: #22baced7;
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        border-top: 2px solid #22baced7;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .link-box a:hover {
+        background-color: #22baced7;
+    }
+
+    footer {
+        background-color: #22baced7;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        font-size: 15px;
+        box-sizing: border-box; 
+}
+
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>فرع الكلية التقنية بفرسان </h1>
+</header>
+
+
+<div class="navbar">
+    <a href="الصفحة الرئيسية.html">الرئيسية</a>
+    <a href="عن الكلية.html">عن الكلية</a>
+    <div class="dropdown">
+        <button class="dropbtn">الأقسام</button>
+        <div class="dropdown-content">
+            <a href="قسم الحاسب وتقنية المعلومات.html" onclick="showDepartment('comp')"> الحاسب وتقنية المعلومات</a>
+            <a href="قسم التقنية الادارية والمالية.html" onclick="showDepartment('admin')"> التقنية الادارية والمالية</a>
+        </div>
+    </div>
+    <a href="شؤون المتدربين.html">شؤون المتدربين</a>
+    <a href="قسم التوجيه والارشاد.html"> التوجيه والارشاد</a>
+    <a href="روابط مهمة .html">روابط مهمة</a>
+    <a href="صفحة تسجيل دخول.html"> تسجيل دخول المشرفين</a>
+    <a href="تواصل معنا .html" onclick="showContact()">تواصل معنا</a>
+    <a href="الاسئلة الشائعة.html">الاسئلة الشائعة</a>
+    <a href="طلب خدمة.html" onclick="showAppointmentModal()">طلب خدمة </a>
+</div>
+
+
+
+
+<footer>
+    <p>جميع الحقوق محفوظة 2024 &copy; <br><br>  المتدرب / فيصل علي عريشي <br><br>
+        المتدرب / مروان محمد جوخب 
+        <br><br>
+        المتدرب / تركي عسيري 
+        <br><br>
+        المتدرب / يحى كعبي 
+        <br><br>
+          بإشراف  م/ ياسر عبدالله الزهراني 
+    </p>
+    
+</footer>
+
+
+</body>
+</html>

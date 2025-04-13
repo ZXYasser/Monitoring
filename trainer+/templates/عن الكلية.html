@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عن الكلية</title>
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            text-align: right;
+            line-height: 1.6;
+        }
+
+        header {
+            background-image: url('C:/Users/ياسر الزهراني/Desktop/trainer+/photos/background.png');
+            background-color: rgb(255, 255, 255);
+            color: rgb(247, 236, 236);
+            padding: 120px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: #22baced7;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin: 20px 0 0 0;
+        }
+
+        .navbar {
+            background-color: #22baced7;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            display: inline-block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #003366;
+        }
+
+        .navbar .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            right: 0;
+            border-radius: 5px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #333;
+        }
+
+        section {
+            padding: 30px;
+            margin: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #22baced7;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .department {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .box {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .box img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .box h3 {
+            color: #333;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .box p {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+
+
+
+
+        .tree {
+            list-style-type: none;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .tree ul {
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .tree li {
+            margin: 10px;
+            position: relative;
+            padding-left: 20px;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .tree li::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 10px;
+            width: 10px;
+            height: 10px;
+            background-color: #22baced7;
+            border-radius: 50%;
+            display: block;
+        }
+
+        .tree li:before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 10px;
+            width: 2px;
+            height: 100%;
+            background-color: #22baced7;
+        }
+
+        .tree li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .tree li a:hover {
+            color: #22baced7;
+        }
+
+        footer {
+        background-color: #22baced7;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        font-size: 15px;
+        box-sizing: border-box; 
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>فرع الكلية التقنية بفرسان</h1>
+        <p></p>
+    </header>
+
+
+    <div class="navbar">
+        <a href="الصفحة الرئيسية.html">الرئيسية</a>
+        <a href="عن الكلية.html">عن الكلية</a>
+        <div class="dropdown">
+            <a href="dropbtn">الأقسام</href>
+            <div class="dropdown-content">
+                <a href="قسم الحاسب وتقنية المعلومات.html" onclick="showDepartment('comp')"> الحاسب وتقنية المعلومات</a>
+                <a href="قسم التقنية الادارية والمالية.html" onclick="showDepartment('admin')"> التقنية الادارية والمالية</a>
+            </div>
+        </div>
+        <a href="شؤون المتدربين.html">شؤون المتدربين</a>
+        <a href="قسم التوجيه والارشاد.html"> التوجيه والارشاد</a>
+        <a href="روابط مهمة .html">روابط مهمة</a>
+        <a href="صفحة تسجيل دخول.html"> تسجيل دخول المشرفين</a>
+        <a href="تواصل معنا .html" onclick="showContact()">تواصل معنا</a>
+        <a href="الاسئلة الشائعة.html">الاسئلة الشائعة</a>
+        <a href="طلب خدمة.html" onclick="showAppointmentModal()">طلب خدمة </a>
+    </div>
+
+    
+    <section>
+        <h2>عن الكلية</h2>
+        <p>هي احدى الكليات التقنية بالمملكة وتعمل تحت مظلة المؤسسة العامة للتدريب التقني والمهني     </p>
+        
+        <h2>رؤيتنا</h2>
+        <p>تحقيق الريادة في التدريب التقني والمهني وتأهيل كوادر تقنية متميزة قادرة على المنافسة في سوق العمل بكفاءة عالية وذلك من خلال بيئة تدريبية وتعليمية مثالية تراعي متطلبات الجودة في التدريب. </p>
+        
+        <h2> اهدافنا</h2>
+        <p>تأهيل المتدربين للعمل في مجالات التقنية الحديثة </p>
+        
+        
+        <h2>أقسام الكلية</h2>
+        <ul>
+            <li><a href="قسم الحاسب وتقنية المعلومات.html">قسم الحاسب وتقنية المعلومات  </a></li>
+<li><a href="قسم التقنية الادارية والمالية.html">قسم التقنية الادارية والمالية </a></li>
+
+
+        
+
+
+
+        </ul>
+    </section>
+    <center> 
+    <h1>الهيكل الإداري</h1>
+    
+    <div class="department">
+        <div class="box"> 
+            <img src="" alt=" ">
+            <h3> م/ رياض حبادي  </h3>
+            <p>rhadabadi@tvtc.gov.sa </p>
+            <p> عميد الكلية  </p>
+        </div>
+        
+        <div class="line">
+            <div class="connector"></div>
+        </div>
+
+          <div class="department">
+            <div class="box">
+            <img src="" alt=" ">
+            <h3> م/ ياسر الزهراني  </h3>
+            <p> yasser.a3@tvtc.edu.sa </p>
+            <p>   رئيس قسم التنسيق الوظيفي  </p>
+        </div>
+    </div>
+    
+        <div class="department">
+            <div class="box">
+            <img src="" alt=" ">
+            <h3> م/ حسين السليم  </h3>
+            <p> halsaleem@tvtc.gov.sa </p>
+            <p>    وكيل شؤون المدربين  </p>
+        </div>
+    
+      
+    
+        <div class="department_right">
+            <div class="box">
+            <img src="C:\Users\ياسر الزهراني\Desktop\trainer+\photos\zed.jpg" alt=" ">
+            <h3> م/ زيد النجمي  </h3>
+            <p> z.najmi@tvtc.edu.sa</p>
+            <p>    رئيس قسم الحاسب وتقنية المعلومات </p>
+        </div>
+    </div>
+    
+        <div class="department">
+            <div class="box">
+            <img src="" alt=" ">
+            <h3> أ/ حسن خضي  </h3>
+            <p> hassank@tvtc.gov.sa</p>
+            <p> رئيس قسم التقنية الإدارية والمالية  </p>
+        </div>
+    </div>
+    
+        <div class="department">
+            <div class="box">
+            <img src="" alt=" ">
+            <h3> م/ خالد العتيبي  </h3>
+            <p> k.alotaibi1@tvtc.gov.sa</p>
+            <p> مدرب  </p>
+        </div>
+    </div>
+
+        <div class="department">
+            <div class="box">
+            <img src="" alt=" ">
+            <h3> م/ عمر فطيل  </h3>
+            <p> ofatil@tvtc.gov.sa</p>
+            <p> مدرب  </p>
+        </div>
+    </div>
+
+        <div class="department">
+            <div class="box">
+            <img src="" alt=" ">
+            <h3> مروان العلي </h3>
+            <p> marwan.a1@tvtc.gov.sa</p>
+            <p> مدرب </p>
+        </div>
+    </div>
+    
+        <div class="department">
+            <div class="box">
+            <img src="" alt=" ">
+            <h3> </h3>
+            <p>almathna.k@tvtc.gov.sa</p>
+            <p> </p>
+        </div>
+    </div>
+    
+        <div class="department">
+            <div class="box">
+            <img src="" alt=" ">
+            <h3> أ/ علي عسيلي  </h3>
+            <p> ali.esili@tvtc.gov.sa</p>
+            <p> مدرب </p>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="department">
+        <div class="box">
+        <img src="C:\Users\ياسر الزهراني\Desktop\trainer+\photos\ahmed.jpeg" alt=" ">
+        <h3> أ/ احمد حكمي </h3>
+        <p></p>
+        <p> وكيل شؤون المتدربين </p>
+    </div>
+</div>
+
+
+
+<div class="department">
+    <div class="box">
+    <img src="" alt=" ">
+    <h3> أ/ علي الزهراني  </h3>
+    <p></p>
+    <p> رئيس قسم التوجيه والارشاد  </p>
+</div>
+</div>
+
+    </div>
+
+
+    <footer>
+        <p>جميع الحقوق محفوظة 2024 &copy; <br><br>  المتدرب / فيصل علي عريشي <br><br>
+            المتدرب / مروان محمد جوخب 
+            <br><br>
+            المتدرب / تركي عسيري 
+            <br><br>
+            المتدرب / يحى كعبي 
+            <br><br>
+              بإشراف  م/ ياسر عبدالله الزهراني 
+        </p>
+        
+    </footer>
+
+
+</body>
+</html>

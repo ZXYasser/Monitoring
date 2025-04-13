@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>فرع الكلية التقنية بفرسان</title>
+
+       
+        <!-- CSS FILES -->        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Sono:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+                        
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}} ">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-icons.css')}}">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css')}}">
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css')}}">
+
+        <link  rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-pod-talk.css')}}">
+        
+<!--
+TemplateMo 584 Pod Talk
+
+https://templatemo.com/tm-584-pod-talk
+
+-->
+    </head>
+    
+    <body>
+
+        <main>
+
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand me-lg-5 me-0" href="index.html">
+                        <img src="{{ url_for('static', filename='images/tvtc.png') }}" class="logo-image img-fluid" alt="tvtc">
+                    </a>
+
+                   
+    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+
+                </div>
+            </nav>
+            
+
+            <section class="hero-section">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12">
+                            <div class="text-center mb-5 pb-2">
+                                <h1 class="text-white">فرع الكلية التقنية بفرسان يرحب بكم</h1>
+
+                            
+
+                                <a href="#section_2" class="btn custom-btn smoothscroll mt-3">اختر الخدمة</a>
+                            </div>
+
+                            <div class="owl-carousel owl-theme">
+                               
+
+
+
+                                <div class="owl-carousel-info-wrap item">
+                                    <a class="nav-link active" href="{{ url_for('add_lecture') }}"><img src="{{ url_for('static', filename='images/profile/mf.png') }}" class="owl-carousel-image img-fluid" alt=""></a>
+
+                                    <div class="owl-carousel-info">
+                                        <h4 class="mb-2">
+                                            الإفصاح والمتابعة
+                                          <img src="images/verified.png" class="owl-carousel-verified-image img-fluid" alt="">
+                                        </h4>
+                                       
+                                        <span class="badge">إدارة المتابعة</span>
+
+                                        <span class="badge">عضو هيئة التدريب</span>
+                                    </div>
+
+                                    <div class="social-share">
+                                        <ul class="social-icon">
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-twitter"></a>
+                                            </li>
+
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-facebook"></a>
+                                            </li>
+
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-pinterest"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                
+
+                                <div class="owl-carousel-info-wrap item">
+                                  
+                                     <a class="nav-link active" href="{{ url_for('jobs') }}"><img src="{{ url_for('static', filename='images/profile/jo.png') }}" class="owl-carousel-image img-fluid" alt="" ></a>
+
+                                    <div class="owl-carousel-info">
+                                        <h4 class="mb-2">
+                                
+                                            التوظيف
+                                            <img src="images/verified.png" class="owl-carousel-verified-image img-fluid" alt="">
+                                        </h4>
+
+                                        <span class="badge"> جهات حكومية</span>
+                                        <span class="badge"> شركات</span>
+                                        <span class="badge"> مؤسسات</span>
+                                    </div>
+
+                                    <div class="social-share">
+                                        <ul class="social-icon">
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-instagram"></a>
+                                            </li>
+
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-youtube"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                               
+                                
+
+                                <div class="owl-carousel-info-wrap item">
+                                    <a class="nav-link active" href="trainer+\templates\الصفحة الرئيسية.html"> <img src="{{ url_for('static', filename='images/profile/tr.png') }}" class="owl-carousel-image img-fluid" alt=""></a>
+
+                                    <div class="owl-carousel-info">
+                                        <h4 class="mb-2">
+                                            المتدربين
+                                            <img src="images/verified.png" class="owl-carousel-verified-image img-fluid" alt="">
+                                        </h4>
+
+                                        <span class="badge"> استفسار</span>
+                                        <span class="badge"> طلبات</span>
+                                    </div>
+
+                                    <div class="social-share">
+                                        <ul class="social-icon">
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-instagram"></a>
+                                            </li>
+
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-youtube"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+                              
+
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+          
+        <!-- JAVASCRIPT FILES -->
+        <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+    </body>
+</html>

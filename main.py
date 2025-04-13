@@ -532,6 +532,20 @@ def contactUs():
 #--------------------------------------------------------------------------------------------------------
 
 
+@app.route('/index')     
+def index():
+    return render_template('index.html')
+
+#--------------------------------------------------------------------------------------------------------
+
+
+@app.route('/jobs')     
+def jobs():
+    return render_template('jobs.html')
+
+#--------------------------------------------------------------------------------------------------------
+
+
 @app.route('/Equipment')     
 def Equipment():
     return render_template('Equipment.html')

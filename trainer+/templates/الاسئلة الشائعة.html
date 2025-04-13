@@ -1,0 +1,417 @@
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأسئلة الشائعة </title>
+    <style>
+        
+       /* تنسيق عام للجسم */
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            text-align: right;
+        }
+
+        /* تنسيق الهيدر */
+        header {
+            background-image: url('C:/Users/ياسر الزهراني/Desktop/trainer+/photos/background.png');
+            background-color: rgb(255, 255, 255);
+            color: rgb(247, 236, 236);
+            padding: 120px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: #22baced7;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin: 20px 0 0 0;
+        }
+
+        /* تنسيق الشريط العلوي للروابط (Navbar) */
+        .navbar {
+            background-color: #22baced7;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            display: inline-block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #003366;
+        }
+
+        /* تنسيق الـ Dropdown */
+        .navbar .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            right: 0;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 1rem;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #003366;
+        }
+
+        /* تنسيق الزر في الـ Dropdown */
+        .dropbtn {
+            background-color: #22baced7;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            padding: 14px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropbtn:hover,
+        .dropbtn:focus {
+            background-color: #003366;
+        }
+
+        
+
+        .content {
+            display: flex;
+            justify-content: space-around;
+            margin: 10px;
+        }
+
+        .ad-section {
+            background-color: #22baced7;
+            padding: 20px;
+            border-radius: 8px;
+            width: 30%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .ad-section h3 {
+            color: #ffffff;
+        }
+
+        .ad-section img {
+            width: 90%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+
+
+
+
+        container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 50px;
+            text-align: right;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: border 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+      
+
+        /* Adding a shake effect on submit button */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            75% { transform: translateX(-10px); }
+            100% { transform: translateX(0); }
+        }
+
+        .shake-animation {
+            animation: shake 0.5s ease;
+        }
+
+
+
+
+
+
+        h2 {
+            font-size: 28px;
+            color: #22baced7;
+            text-align: center;
+            margin: 40px 0;
+            padding: 10px;
+            border-bottom: 2px solid #22baced7;
+            font-weight: bold;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            border-color: #22baced7;
+            background-color: #e0f7fa;
+        }
+
+        .faq-item h3 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+            border-bottom: 2px solid #22baced7;
+            padding-bottom: 5px;
+        }
+
+        .faq-item p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .faq-item span {
+            font-weight: bold;
+            color: #22baced7;
+        }
+
+        .faq-item .highlight {
+            background-color: #e0f7fa;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        /* For better responsiveness */
+        @media (max-width: 768px) {
+            .faq-item {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .faq-item h3 {
+                font-size: 20px;
+            }
+        }
+
+
+       
+        footer {
+        background-color: #22baced7;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        font-size: 15px;
+        box-sizing: border-box; 
+}
+       
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>فرع الكلية التقنية بفرسان</h1>
+        <p></p>
+    </header>
+
+
+    <div class="navbar">
+        <a href="الصفحة الرئيسية.html">الرئيسية</a>
+        <a href="عن الكلية.html">عن الكلية</a>
+        <div class="dropdown">
+            <button class="dropbtn">الأقسام</button>
+            <div class="dropdown-content">
+                <a href="قسم الحاسب وتقنية المعلومات.html" onclick="showDepartment('comp')"> الحاسب وتقنية المعلومات</a>
+                <a href="قسم التقنية الادارية والمالية.html" onclick="showDepartment('admin')"> التقنية الادارية والمالية</a>
+            </div>
+        </div>
+        <a href="شؤون المتدربين.html">شؤون المتدربين</a>
+        <a href="قسم التوجيه والارشاد.html"> التوجيه والارشاد</a>
+        <a href="روابط مهمة .html">روابط مهمة</a>
+        <a href="صفحة تسجيل دخول.html"> تسجيل دخول المشرفين</a>
+        <a href="تواصل معنا .html" onclick="showContact()">تواصل معنا</a>
+        <a href="الاسئلة الشائعة.html">الاسئلة الشائعة</a>
+        <a href="طلب خدمة.html" onclick="showAppointmentModal()">طلب خدمة </a>
+    </div>
+
+<div class="container">
+    <!-- FAQ Section -->
+    <div class="faq-section">
+        <h2>الأسئلة الشائعة</h2>
+
+        <div class="faq-item">
+            <h3>طريقة اضافة الايبان؟</h3>
+            <p> طلب خدمة < Banner < الخدمات الذاتية للمتدربين< الدخول الى موقع رايات</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>طريقة تنزيل المواد؟</h3>
+            <p>يمكنك تسجيل المواد الدراسية من خلال البوابة الإلكترونية للكلية التقنية باستخدام حسابك الخاص.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>طريقة استعادة كلمة المرور او تغيرها؟</h3>
+            <p>نعم، الكلية التقنية توفر برامج تدريبية صيفية للطلاب الذين يرغبون في تحسين مهاراتهم.</p>
+        </div>
+        <div class="faq-item">
+            <h3>طريقة تحديث رقم الجوال؟</h3>
+            <p>طلب خدمة < Banner < الخدمات الذاتية للمتدربين< الدخول الى موقع رايات</p>
+        </div>
+        </div>
+    </div>
+
+    <!-- Appointment Booking Form -->
+    <div class="appointment-form">
+        <h2>ضع استفسارك</h2>
+        <form>
+            <label for="name">الاسم الكامل:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="training-number">الرقم التدريبي:</label>
+            <input type="text" id="training-number" name="training-number" required>
+            <label for="name">البريد الالكتروني </label>
+            <textarea id="issue" name="issue" rows="4" placeholder="***@tvtc.edu.sa" required></textarea>
+            
+            <label for="department">القسم:</label>
+            <select id="department" name="department" required>
+                <option value="">اختر القسم</option>
+                <option value=" ">حاسب الي </option>
+                <option value=" ">التقنية الادارية والمالية</option>
+            </select>
+
+            <label for="issue">  رسالتك </label>
+            <textarea id="issue" name="issue" rows="4" required></textarea>
+
+            <button type="submit">ارسال</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Toggle FAQ answers
+    document.querySelectorAll('.faq-item h3').forEach(function (faqHeader) {
+        faqHeader.addEventListener('click', function () {
+            const faqContent = faqHeader.nextElementSibling;
+            faqContent.style.display = faqContent.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+</script>
+
+
+
+
+<footer>
+    <p>جميع الحقوق محفوظة 2024 &copy; <br><br>  المتدرب / فيصل علي عريشي <br><br>
+        المتدرب / مروان محمد جوخب 
+        <br><br>
+        المتدرب / تركي عسيري 
+        <br><br>
+        المتدرب / يحى كعبي 
+        <br><br>
+          بإشراف  م/ ياسر عبدالله الزهراني 
+    </p>
+    
+</footer>
+
+
+</body>
+</html>
+
+

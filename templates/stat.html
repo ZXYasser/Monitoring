@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <title>Lecture Statistics</title>
+        <title>الإحصائيات</title>
     
     <style>
         
@@ -331,16 +331,21 @@ body { font-family: 'Arial', sans-serif; direction: rtl; padding: 20px; backgrou
         </div> -->
         
 
-        
+         
         <h1>الكلية التقنية بفرسان</h1>
         <h1>قسم المتابعه</h1>
         <div class="et-hero-tabs-container">
-            <a class="et-hero-tab" href="{{ url_for('contactUs') }}">تواصل معنا</a>
-            <a class="et-hero-tab" href="{{ url_for('view_files') }}">القاعات</a>
-            <a class="et-hero-tab" href="{{ url_for('add_teacher') }}">المدربين</a>
-            <a class="et-hero-tab" href="{{ url_for('stat') }}">الإحصائيات</a>
-            <a class="et-hero-tab" href="{{ url_for('Equipment') }}"> المعدات</a>
             <a class="et-hero-tab" href="{{ url_for('add_lecture') }}">الصفحة الرئيسيه</a>
+            <a class="et-hero-tab" href="{{ url_for('Equipment') }}"> المعدات</a>
+            <a class="et-hero-tab" href="{{ url_for('stat') }}">الإحصائيات</a>
+            <a class="et-hero-tab" href="{{ url_for('add_teacher') }}">المدربين</a>
+            <a class="et-hero-tab" href="{{ url_for('view_files') }}">القاعات</a>
+            <a class="et-hero-tab" href="{{ url_for('contactUs') }}">تواصل معنا</a>
+           
+           
+          
+       
+           
             <span class="et-hero-tab-slider"></span>
           </div>
        
@@ -356,7 +361,7 @@ body { font-family: 'Arial', sans-serif; direction: rtl; padding: 20px; backgrou
 <div class="teacher-cards">
     {% for teacher, data in stats.items() %}
     <div class="teacher-card">
-        <img src=""{{ url_for('stat', filename='images/yasser.jpeg') }}"" alt="صورة المدرس" class="teacher-image">
+        <img src="{{ url_for('stat', filename='images/yasser.jpeg') }}" alt="صورة المدرس" class="teacher-image">
         <h3>{{ teacher }}</h3>
         <p>عدد المحاضرات: {{ data.total }}</p>
         <p>المنفذة ✅: {{ data.attended }}</p>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+
+<html lang="en,ar">
+<head>
+
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> طلب خدمة </title>
+    <style>
+       
+ /* تنسيق عام للجسم */
+ body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            text-align: right;
+        }
+
+        /* تنسيق الهيدر */
+        header {
+            background-image: url('C:/Users/ياسر الزهراني/Desktop/trainer+/photos/background.png');
+            background-color: rgb(255, 255, 255);
+            color: rgb(247, 236, 236);
+            padding: 120px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: #22baced7;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin: 20px 0 0 0;
+        }
+
+        /* تنسيق الشريط العلوي للروابط (Navbar) */
+        .navbar {
+            background-color: #22baced7;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            display: inline-block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #003366;
+        }
+
+        /* تنسيق الـ Dropdown */
+        .navbar .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            right: 0;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 1rem;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #003366;
+        }
+
+        /* تنسيق الزر في الـ Dropdown */
+        .dropbtn {
+            background-color: #22baced7;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            padding: 14px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropbtn:hover,
+        .dropbtn:focus {
+            background-color: #003366;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-around;
+            margin: 10px;
+        }
+
+        .ad-section {
+            background-color: #22baced7;
+            padding: 20px;
+            border-radius: 8px;
+            width: 30%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .ad-section h3 {
+            color: #ffffff;
+        }
+
+        .ad-section img {
+            width: 90%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-size: 10px;
+            margin-top: 10px;
+            display: block;
+            color: #333;
+        }
+        input, select, textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #22baced7;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #22baced7;
+        }
+
+
+
+        footer {
+        background-color: #22baced7;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        font-size: 15px;
+        box-sizing: border-box; 
+}
+
+
+    </style>
+</head>
+<!DOCTYPE html>
+<html lang="en,ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> طلب خدمة </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            text-align: right;
+        }
+        /* بقية الأنماط الخاصة بك */
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>فرع الكلية التقنية بفرسان</h1>
+    </header>
+
+    <div class="navbar">
+        <a href="الصفحة الرئيسية.html">الرئيسية</a>
+        <a href="عن الكلية.html">عن الكلية</a>
+        <div class="dropdown">
+            <button class="dropbtn">الأقسام</button>
+            <div class="dropdown-content">
+                <a href="قسم الحاسب وتقنية المعلومات.html" onclick="showDepartment('comp')"> الحاسب وتقنية المعلومات</a>
+                <a href="قسم التقنية الادارية والمالية.html" onclick="showDepartment('admin')"> التقنية الادارية والمالية</a>
+            </div>
+        </div>
+        <a href="شؤون المتدربين.html">شؤون المتدربين</a>
+        <a href="قسم التوجيه والارشاد.html"> التوجيه والارشاد</a>
+        <a href="روابط مهمة .html">روابط مهمة</a>
+        <a href="صفحة تسجيل دخول.html"> تسجيل دخول المشرفين</a>
+        <a href="تواصل معنا .html" onclick="showContact()">تواصل معنا</a>
+        <a href="الاسئلة الشائعة.html">الاسئلة الشائعة</a>
+        <a href="طلب خدمة.html" onclick="showAppointmentModal()">طلب خدمة </a>
+    </div>
+
+
+    <h1> طلب خدمة </h1>
+    <form action="poststudata.php" method="POST">
+        <!-- اختيار القسم -->
+        <label for="student_dep"> اختر القسم:</label>
+        <select id="student_dep" name="student_dep" onchange="updateOptions()">
+            <option value="">--Select--</option>
+            <option value="computer">قسم الحاسب وتقنية المعلومات</option>
+            <option value="mange">قسم التقنية الادارية والمالية </option>
+            <option value="stu">شؤون المتدربين </option>
+            <option value="gg">التوجيه والإرشاد</option>
+        </select>
+        <br><br>
+
+        <!-- اختيار نوع الخدمة -->
+        <label for="student_servies">نوع الخدمة:</label>
+        <select id="student_servies" name="student_servies">
+            <option value="">--Select--</option>
+        </select>
+
+        <br><br>
+        <!-- معلومات المستخدم -->
+        <div class="container">
+            <label for="name">الاسم الكامل:</label>
+            <input type="text" id="student_name" name="student_name" required>
+
+            <label for="phone">رقم الهاتف:</label>
+            <input type="text" id="student_phone" name="student_phone" required>
+
+            <label for="training_number">الرقم التدريبي:</label>
+            <input type="text" id="student_id" name="student_id" required>
+
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="student_email" name="student_email" required>
+
+            <label for="notes">ملاحظات أخرى:</label>
+            <textarea id="student_comment" name="student_comment" rows="4" ></textarea>
+        </div>
+
+        <button type="submit">إرسال</button>
+    </form>
+
+    <script>
+        // تحديث الخيارات بناءً على القسم المختار
+        function updateOptions() {
+            const categorySelect = document.getElementById('student_dep');
+            const optionSelect = document.getElementById('student_servies');
+
+            // مسح الخيارات السابقة
+            optionSelect.innerHTML = '';
+
+            const selectedCategory = categorySelect.value;
+            let options = [];
+
+            // تحديد الخيارات بناءً على القسم
+            if (selectedCategory === 'computer') {
+                options = ['حذف مقرر', 'اضافة مقرر', 'تقديم عذر طبي', 'رفع نموذج تظلم (النظر في موضوع الدرجات)'];
+            } else if (selectedCategory === 'mange') {
+                options = ['حذف مقرر', 'اضافة مقرر', 'تقديم عذر طبي', 'رفع نموذج تظلم (النظر في موضوع الدرجات)'];
+            } else if (selectedCategory === 'stu') {
+                options = ['مشكلة مالية', 'طلب انسحاب ترم', 'تغيير تخصص', 'تحديث رقم الجوال', 'تحديث ايبان', 'اضافة ايبان'];
+            } else if (selectedCategory === 'gg') {
+                options = ['مشكلة مالية', 'طلب انسحاب ترم', 'تغيير تخصص', 'تحديث رقم الجوال', 'تحديث ايبان', 'اضافة ايبان'];
+            }
+
+            // إضافة الخيارات للقائمة المنسدلة
+            options.forEach(option => {
+                const opt = document.createElement('option');
+                opt.value = option;
+                opt.textContent = option;
+                optionSelect.appendChild(opt);
+            });
+        }
+    </script>
+
+
+
+
+
+<footer>
+    <p>جميع الحقوق محفوظة 2024 &copy; <br><br>  المتدرب / فيصل علي عريشي <br><br>
+        المتدرب / مروان محمد جوخب 
+        <br><br>
+        المتدرب / تركي عسيري 
+        <br><br>
+        المتدرب / يحى كعبي 
+        <br><br>
+          بإشراف  م/ ياسر عبدالله الزهراني 
+    </p>
+    
+</footer>
+
+
+</body>
+</html>
+
+
+
