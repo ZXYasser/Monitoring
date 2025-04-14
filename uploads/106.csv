@@ -1,15 +1,9 @@
 room_number;day;lecture_time;group_num;group_type;course_code;course_name;stu_num;teacher_name
-106;Sunday;0800 - 0940;1;1;1;computer programming;1;Nayef Al-Marikhan Al-Harbi
-106;Sunday;1000 - 1140;1;1;1;Internet programming;1;Yasser Al-Zahrani
-106;Sunday;1230 -1410;1;1;1;Database principles;1;Nayef Al-Marikhan Al-Harbi
-106;Sunday;1420 - 1600;1;1;1;Software Engineering;1;Yasser Al-Zahrani
-106;Monday;0800 - 0940;1;1;1;Database programming;1;Nayef Al-Marikhan Al-Harbi
-106;Monday;1000 - 1140;1;1;1;computer programming;1;Nayef Al-Marikhan Al-Harbi
-106;Monday;1230 -1410;1;1;1;Database principles;1;Nayef Al-Marikhan Al-Harbi
-106;Tuesday;0800 - 0940;1;1;1;Database programming;1;Nayef Al-Marikhan Al-Harbi
-106;Wednesday;0800 - 0940;1;1;1;Internet programming;1;Yasser Al-Zahrati
-106;Wednesday;1000 - 1140;1;1;1;computer programming;1;Nayef Al-Marikhan Al-Harbi
-106;Wednesday;1230 -1410;1;1;1;Database programming;1;Nayef Al-Marikhan Al-Harbi
-106;Wednesday;1420 - 1600;1;1;1;Database principles;1;Nayef Al-Marikhan Al-Harbi
-106;Thursday;0800 - 0940;1;1;1;Internet programming;1;Yasser Al-Zahrani
-106;Thursday;1000 - 1230;1;1;1;Software Engineering;1;Yasser Al-Zahrani
+195010106;Monday;1140 - 1000;1;äÙÑí ÕÈÇÍí;57934;ÊŞäíÇÊ ÇáÇäÊÑäÊ ÇáãÊŞÏãÉ;11;ÎÇáÏ ÇáÏáÈÍí ÇáÚÊíÈí
+195010106;Wednesday;1150 - 1100;1;Úãáí ÕÈÇÍí;57936;ÊŞäíÇÊ ÇáÇäÊÑäÊ ÇáãÊŞÏãÉ;11;ÎÇáÏ ÇáÏáÈÍí ÇáÚÊíÈí
+195010106;Sunday;1410 - 1230;1;äÙÑí ÕÈÇÍí;58023;ÈÑãÌÉ ÇáÃÌåÒÉ ÇáĞßíÉ;12;íÇÓÑ ÇáÒåÑÇäí
+195010106;Wednesday;0940 - 0800;1;Úãáí ÕÈÇÍí;58026;ÈÑãÌÉ ÇáÃÌåÒÉ ÇáĞßíÉ;12;íÇÓÑ ÇáÒåÑÇäí
+195010106;Tuesday;0940 - 0800;1;Úãáí ÕÈÇÍí;58026;ÈÑãÌÉ ÇáÃÌåÒÉ ÇáĞßíÉ;12;íÇÓÑ ÇáÒåÑÇäí
+195010106;Monday;0940 - 0800;1;Úãáí ÕÈÇÍí;58028;ãÔÑæÚ;11;íÇÓÑ ÇáÒåÑÇäí
+195010106;Sunday;1510 - 1420;1;äÙÑí ÕÈÇÍí;58029;ãÔÑæÚ;11;íÇÓÑ ÇáÒåÑÇäí
+195010106;Wednesday;1050 - 1000;1;äÙÑí ÕÈÇÍí;58030;ÇáÊÃåíá ááÔåÇÏÇÊ ÇáÇÍÊÑÇİíÉ;14;íÇÓÑ ÇáÒåÑÇäí

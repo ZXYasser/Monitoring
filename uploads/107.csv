@@ -1,15 +1,16 @@
 room_number;day;lecture_time;group_num;group_type;course_code;course_name;stu_num;teacher_name
-107;Sunday;1000 - 1140;1;1;1;Using computers in business;1;Ali Asili
-107;Sunday;1230 - 1410;1;1;1;Typing skills in English;1;Ibrahim Al-Hubaili Al-Qahtani
-107;Sunday;1420 - 1600;1;1;1;Arabic typing skills;1;Ibrahim Al-Hubaili Al-Qahtani
-107;Monday;0800 - 0940;1;1;1;Using computers in business;1;Ali Asili
-107;Monday;1000 - 1140;1;1;1;Introduction to statistics;1;Ali Asbli
-107;Monday;1230 - 1410;1;1;1;Arabic typing skills;1;Ibrahim Al-Hubaili Al-Qahtani
-107;Monday;1420 - 1600;1;1;1;Typing skills in English;1;Ibrahim Al-Hubaili Al-Qahtati
-107;Tuesday;1230 - 1410;1;1;1;Arabic typing skills;1;Ibrahim Al-Hubaili Al-Qahtani
-107;Wednesday;0800 - 0940;1;1;1;Using computers in business;1;Ali Asili
-107;Wednesday;1000 - 1140;1;1;1;Typing skills in English;1;Ibrahim Al-Hubaili Al-Qahtani
-107;Wednesday;1230 - 1410;1;1;1;Arabic typing skills;1;Ibrahim Al-Hubaili Al-Qahtani
-107;Thursday;ı0940 - 0800;1;1;1;Typing skills in English;1;Ibrahim Al-Hubaili Al-Qahtani
-107;Thursday;1000 - 1140;1;1;1;Using computers in business;1;Ali Asili
-107;Thursday;1420 - 1740;1;1;1;Advanced computer applications;1;Khaled Al-Dalbahi Al-Otaibi
+195010107;Tuesday;0940 - 0800;1;Úãáí ÕÈÇÍí;57893;ãŞÏãÉ ÊØÈíŞÇÊ ÇáÍÇÓÈ;24;ÒíÏ äÌãí
+195010107;Sunday;1140 - 1000;1;Úãáí ÕÈÇÍí;57893;ãŞÏãÉ ÊØÈíŞÇÊ ÇáÍÇÓÈ;24;ÒíÏ äÌãí
+195010107;Wednesday;1600 - 1420;1;Úãáí ÕÈÇÍí;57894;ãŞÏãÉ ÊØÈíŞÇÊ ÇáÍÇÓÈ;42;İåÏ ÍŞæí
+195010107;Monday;1600 - 1420;1;Úãáí ÕÈÇÍí;57894;ãŞÏãÉ ÊØÈíŞÇÊ ÇáÍÇÓÈ;42;İåÏ ÍŞæí
+195010107;Tuesday;1410 - 1230;1;Úãáí ÕÈÇÍí;57994;ãŞÏãÉ ÊØÈíŞÇÊ ÇáÍÇÓÈ;41;ÒíÏ äÌãí
+195010107;Sunday;1600 - 1420;1;Úãáí ÕÈÇÍí;57994;ãŞÏãÉ ÊØÈíŞÇÊ ÇáÍÇÓÈ;41;ÒíÏ äÌãí
+195010107;Monday;1410 - 1230;1;Úãáí ÕÈÇÍí;57988;ÊØÈíŞÇÊ ÇáÍÇÓÈ ÇáãÊŞÏãÉ;27;ÚãÑ İØíá
+195010107;Sunday;1410 - 1230;1;Úãáí ÕÈÇÍí;57988;ÊØÈíŞÇÊ ÇáÍÇÓÈ ÇáãÊŞÏãÉ;27;ÚãÑ İØíá
+195010107;Tuesday;1140 - 1000;1;Úãáí ÕÈÇÍí;57998;ÊØÈíŞÇÊ ÇáÍÇÓÈ ÇáãÊŞÏãÉ;25;ÚãÑ İØíá
+195010107;Wednesday;1410 - 1230;1;Úãáí ÕÈÇÍí;58355;ãåÇÑÇÊ  ÇáØÈÇÚÉ ÇáÚÑÈíÉ;17;ÇáãËäì ßãíÊ
+195010107;Monday;1140 - 1000;1;Úãáí ÕÈÇÍí;58355;ãåÇÑÇÊ  ÇáØÈÇÚÉ ÇáÚÑÈíÉ;17;ÇáãËäì ßãíÊ
+195010107;Thursday;1140 - 1000;1;Úãáí ÕÈÇÍí;58267;ãåÇÑÇÊ ÇáØÈÇÚÉ ÈÇáÇäÌáíÒíÉ;21;İåÏ ÍŞæí
+195010107;Tuesday;1600 - 1420;1;Úãáí ÕÈÇÍí;58267;ãåÇÑÇÊ ÇáØÈÇÚÉ ÈÇáÇäÌáíÒíÉ;21;İåÏ ÍŞæí
+195010107;Wednesday;1140 - 1000;1;Úãáí ÕÈÇÍí;58356;ÇÓÊÎÏÇã ÇáÍÇÓÈ ÇáÇáí İí ÇáÇÚãÇ;17;ÇáãËäì ßãíÊ
+195010107;Monday;0940 - 0800;1;Úãáí ÕÈÇÍí;58356;ÇÓÊÎÏÇã ÇáÍÇÓÈ ÇáÇáí İí ÇáÇÚãÇ;17;ÇáãËäì ßãíÊ
