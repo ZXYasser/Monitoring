@@ -41,7 +41,7 @@ create_attendance_table()
 #--------------------------------------------------------------------------------------------------------
 
 # Define the dean's email address
-DEAN_EMAIL = "yasser.a3@tvtc.gov.sa"
+DEAN_EMAIL = "halsaleem@tvtc.gov.sa"
 
 
 
