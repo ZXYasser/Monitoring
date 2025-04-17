@@ -41,7 +41,7 @@ create_attendance_table()
 #--------------------------------------------------------------------------------------------------------
 
 # Define the dean's email address
-DEAN_EMAIL = "yasserza009@gmail.com"
+DEAN_EMAIL = "yasser.a3@tvtc.gov.sa"
 
 
 
@@ -60,7 +60,7 @@ def send_email(receiver_email, missed_lecture=False, attachment_path=None, misse
         body = """\
         عزيزي وكيل شؤون المدربين,
 
-        هذه رساله للتنبيه بعدم تنفيذ محاضره. تجدون في النموذج المعلومات الكافيه.
+        هذه رساله للتنبيه بعدم تواجد مدرب . تجدون في النموذج المعلومات الكافيه.
         يرجى اتخاذ الإجراء المناسب.
 
         احترامي
@@ -450,7 +450,7 @@ def update_attendance():
                 missed_lecture_details.append(f"{room_number}  :رقم القاعه ")
                 missed_lecture_details.append(f"  {day} :اليوم  ")
                 missed_lecture_details.append(f" {lecture_time} :وقت المحاضره ")
-                missed_lecture_details.append(f"{teacher_name} : اسم المدرس")
+                missed_lecture_details.append(f"{teacher_name} : اسم المدرب")
                 missed_lecture_details.append(f"{course_name} : اسم  المقرر")
 
         if missed_lecture_details:
